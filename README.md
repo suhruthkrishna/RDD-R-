@@ -1,6 +1,33 @@
-To start off: what problems does RDD solve? Why do people want to use it? The main appeal of Regression Discontinuity Design, the reason why people want to use it, is that it helps convincingly eliminate much of the causal effect of selection bias. We’re controlling for selection bias. 
-As stated we will majorly focus on score and democrat, we also establish lagdemocrat which is the republican votes or 1-democrat. We first created a subsample, for vote share between 48 and 52 so in a way we have established thresholds to work with, and as explained by james that is one of the principal aspects  of RDD, when we have created three linear regression models we observe that the p-value in the case of all of them is relatively very low which is to be understood much lower than 0.01, even if we consider it as our alpha, the coefficiant to test statistical significance,with their individual estimated coefficiants being relatively high we can conclude that they hold positive statistical significance, so for all three models, when all three are individual regressors score, lagdemocrat and democrat exhibit causality. Since this is an RDD and we can test the statistical significance we also observe exogenous shock here, if we plot the residuals there is an indication of a bell shaped pattern which also solidifies our hunch about the exogenous shock.
-The estimates here support the divergence theory with higher individual coefficients and very small p-value, and also a very high f-statistic value proves that when democrats stay true to their liberalism a common theory about their policies they tend to attract more votes same as when a republican stays more right wing.
-The values in the summary of the democrat and lagdemocrat specially the p-value suggest there is an incumbancy advantage.
-2->Our results don't really change and since we are not using a threshold here we cannot conclude the model to be RDD.
-3->As asked a third variable was created and established in the linear regression model, which won't change our results drastically but only that the estimated coefficient for the new variable is in the negative, this shows that the regressors are inversely proportional to each other so they are correlated.
+# README – Regression Discontinuity Design (RDD) Project
+
+## What Problem Does RDD Solve?
+
+The primary motivation behind using Regression Discontinuity Design (RDD) is to address and reduce selection bias in causal inference. In observational data, it's often difficult to establish causality due to underlying biases—RDD helps overcome this by leveraging a well-defined cutoff or threshold to isolate the treatment effect in a quasi-experimental setup.
+
+## Key Concepts & Approach
+
+In this project, we focus on the variables `score`, `democrat`, and `lagdemocrat` (which effectively captures Republican vote share as `1 - democrat`). We created a subsample that restricts vote shares between 48% and 52%, aligning with the foundational idea of RDD—using a clear threshold to differentiate treatment and control groups.
+
+As highlighted by James, establishing such a cutoff point is central to the RDD methodology.
+
+## Regression Results & Interpretation
+
+We fit three linear regression models, each using `score`, `lagdemocrat`, and `democrat` as independent regressors. Across all models:
+
+- The p-values are significantly below 0.01, indicating strong statistical significance, even under conservative alpha thresholds.
+- The estimated coefficients are relatively large, suggesting a positive causal relationship.
+- The high F-statistic values further reinforce the overall model fit.
+
+These results support the divergence theory—that when Democrats maintain a liberal stance or Republicans adhere to right-wing ideologies, it reinforces their voter base and enhances electoral performance.
+
+Additionally, residual plots show a bell-shaped pattern, hinting at the presence of an exogenous shock—a feature often explored within RDD frameworks to validate discontinuities at the cutoff.
+
+## Observations on Incumbency Advantage
+
+Notably, the coefficients and very low p-values for `democrat` and `lagdemocrat` also suggest an incumbency advantage, a well-documented phenomenon in political science where existing officeholders tend to attract more votes due to recognition, resources, or past performance.
+
+## Variations and Model Behavior
+
+1. Without a threshold, our results remain consistent, but the model no longer qualifies as a true RDD—since the defining cutoff is absent.
+
+2. Introducing a third variable to the regression model did not drastically alter the outcome. However, its negative coefficient suggests an inverse relationship with existing regressors, implying some level of correlation or multicollinearity.
